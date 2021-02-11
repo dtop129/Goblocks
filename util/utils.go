@@ -20,6 +20,7 @@ type Change struct {
 }
 
 type configStruct struct {
+	Initstring string
 	Separator string
 	Actions   []map[string]interface{}
 }

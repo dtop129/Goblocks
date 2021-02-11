@@ -28,10 +28,14 @@ func main() {
 	channels = make([]chan bool, len(config.Actions))
 	//recChannel is common for gothreads contributing to status bar
 	recChannel := make(chan util.Change)
+
+	blocks = append(blocks, config.Initstring)
+	separator := ""
 	for i, action := range config.Actions {
 		//Assign a cell for each separator/prefix/action/suffix
 		if config.Separator != "" {
-			blocks = append(blocks, config.Separator)
+			blocks = append(blocks, separator)
+			separator = config.Separator
 		}
 		if value, ok := action["prefix"]; ok {
 			blocks = append(blocks, value.(string))
