@@ -70,6 +70,7 @@ func ReadConfig(configName string) (config configStruct) {
 	if err != nil {
 		log.Fatal(err)
 	}
+	confDif = filepath.Join(confDir,"goblocks")
 
 	var file *os.File
 	file, err = os.Open(filepath.Join(confDir,configName))
