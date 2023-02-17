@@ -20,6 +20,7 @@ type Change struct {
 }
 
 type configStruct struct {
+	Waittime time.Duration
 	Initstring string
 	Separator string
 	Actions   []map[string]interface{}

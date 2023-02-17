@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 	"strings"
+	"time"
 	"github.com/BurntSushi/xgb"
 	"github.com/BurntSushi/xgb/xproto"
 )
@@ -28,6 +29,8 @@ func main() {
 	channels = make([]chan bool, len(config.Actions))
 	//recChannel is common for gothreads contributing to status bar
 	recChannel := make(chan util.Change)
+
+	time.Sleep(config.Waittime * time.Second)
 
 	blocks = append(blocks, config.Initstring)
 	separator := ""
